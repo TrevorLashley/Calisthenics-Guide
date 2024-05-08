@@ -2,7 +2,7 @@
 
 const express = require("express");
 const morgan = require("morgan");
-
+const {getExercisesByDifficulty} = require("./handlers/ExerciseHandlers")
 const PORT = 4000;
 
 express()
@@ -22,6 +22,7 @@ express()
   .use(express.json())
   .use(express.urlencoded({ extended: false }))
   .use("/", express.static(__dirname + "/"))
+  .get("/exercises/:difficulty", getExercisesByDifficulty)
 
 
   .listen(PORT, () => console.info(`Listening on port ${PORT}`));
