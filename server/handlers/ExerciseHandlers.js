@@ -8,7 +8,7 @@ const { MONGO_URI } = process.env;
 
 const getExercisesByDifficulty = async (req, res) => {
 
-    console.log(MONGO_URI)
+  
 
     const difficulty = req.params.difficulty
     
@@ -22,7 +22,7 @@ const getExercisesByDifficulty = async (req, res) => {
     const query = {difficulty}
    
   
-    const exercises = await db.collection("Exercises").find().toArray();
+    const exercises = await db.collection("Exercises").find(query).toArray();
   
   
     if (exercises.length > 0) {
