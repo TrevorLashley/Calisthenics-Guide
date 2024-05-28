@@ -3,15 +3,17 @@ import DifficultyButton from "./DifficultyButton";
 
 const Home = () => {
   return (
-    <div>
-      <h1>Home</h1>
+    <HomeContainer>
+      <h1>Lashley's Calisthenics Guide</h1>
 
       <p>
         Welcome to my Calisthenics workout regiment set for any and all fitness
-        levels ranging from begginer to Saiyan.
+        levels ranging from beginner to Saiyan.
       </p>
 
       <h2>What is Calisthenics?</h2>
+
+   
 
       <p>
         Calisthenics is a form of exercise that primarily utilizes one's body
@@ -24,13 +26,14 @@ const Home = () => {
         challenging workout regimen.
       </p>
 
+      <h2>Select your fitness level.</h2>
       <ButtonContainer>
         <DifficultyButton difficulty="Beginner"></DifficultyButton>
-        <DifficultyButton difficulty="Intermidiate"></DifficultyButton>
+        <DifficultyButton difficulty="Intermediate"></DifficultyButton>
         <DifficultyButton difficulty="Advanced"></DifficultyButton>
         <DifficultyButton difficulty="Saiyan"></DifficultyButton>
       </ButtonContainer>
-    </div>
+    </HomeContainer>
   );
 };
 
@@ -39,5 +42,10 @@ const ButtonContainer = styled.div`
   gap: 50px;
   justify-content: center;
 `;
+
+const HomeContainer = styled.div`
+text-align: center;
+margin-left: 100px;
+margin-right: 100px;`
 
 export default Home;
