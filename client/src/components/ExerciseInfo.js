@@ -37,7 +37,7 @@ const ExerciseInfo = () => {
 
   const handleAddExercise = async () => {
     try {
-      const response = await fetch("/add-exercise", {
+      const response = await fetch(`${process.env.SERVER_URL}/add-exercise`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

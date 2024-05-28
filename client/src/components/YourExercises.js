@@ -9,7 +9,7 @@ const YourExercises = () => {
 
   const fetchExercises = async () => {
     try {
-      const response = await fetch(`/exercise-list`);
+      const response = await fetch(`${process.env.SERVER_URL}/exercise-list`);
       const data = await response.json();
       console.log(data);
       setExercises(data.exercises || []);
@@ -28,7 +28,7 @@ const YourExercises = () => {
 
     const remove = async () => {
       try {
-        const response = await fetch(`/remove-exercise/${id}`, {
+        const response = await fetch(`${process.env.SERVER_URL}/remove-exercise/${id}`, {
           method: "DELETE",
         });
         const data = await response.json();
