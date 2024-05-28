@@ -10,8 +10,9 @@ const ExerciseList = () => {
   const difficultyParagraphMap = setDifficultyParagraphMap();
 
   useEffect(() => {
+    console.log(process.env)
     const fetchData = async () => {
-      const response = await fetch(`/exercises/${difficulty}`).then(
+      const response = await fetch(`${process.env.REACT_APP_SERVER_URL}/exercises/${difficulty}`).then(
         (response) => response.json()
       );
       setExercises(response.data ?? []);

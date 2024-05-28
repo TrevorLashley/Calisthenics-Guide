@@ -19,7 +19,7 @@ const SignUp = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch(`${process.env.SERVER_URL}/signup`, {
+      const response = await fetch(`${process.env.REACT_APP_SERVER_URL}/signup`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
